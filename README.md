@@ -31,11 +31,10 @@ In this project, it includes building a simple HTML list of To Do tasks using we
 # Run Tests
 I tested the website by running the code to a live server and opened it with Mozilla Firefox. Tested the local server.
 # Authors  	:bookmark_tabs:
-David Kasilia Mwanzia
+Elie Harfouche
 <ul>
-<li>Github <a href="https://github.com/David-Kasilia">Link To Github Profile</a></li>
-<li>Linkedin <a href="https://www.linkedin.com/in/david-kasilia-846241211/">Link To Linkedin Profile</a></li>
-<li>Twitter <a href="https://twitter.com/DavidKasilia">Link To Twitter Profile</a></li>
+<li>Github <a href="https://github.com/X-Elie-X">Link To Github Profile</a></li>
+
 </ul>
 
 # Contributing :handshake:
