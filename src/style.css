@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+}
+
+.container {
+  border: 1px solid #242b2e;
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 10px;
+  box-shadow: 5px 9px #888;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-family: 'Tiro Gurmukhi', serif;
+  font-size: 20px;
+  color: #242b2e;
+}
+
+.refrech-btn {
+  float: right;
+  margin-top: -40px;
+  margin-right: 20px;
+  border: none;
+  background: none;
+}
+
+.input-list {
+  border: none;
+  margin-bottom: 20px;
+}
+
+::-webkit-input-placeholder {
+  font-family: 'Rubik Dirt', cursive;
+  font-size: 15px;
+  color: #888;
+}
+
+.add-btn {
+  float: right;
+  width: 300px;
+  color: #888;
+  border: none;
+  background: none;
+  margin-right: -125px;
+}
+
+.clear {
+  color: #888;
+  text-align: center;
+  border: 1px solid #888;
+  width: 500px;
+}
