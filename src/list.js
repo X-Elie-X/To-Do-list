@@ -1,44 +1,43 @@
-export default class List {
+export default class AddToDoList {
   constructor() {
-    this.list = localStorage.getItem('lists')
-      ? JSON.parse(localStorage.getItem('lists'))
+    this.list = localStorage.getItem('taskList')
+      ? JSON.parse(localStorage.getItem('taskList'))
       : [];
   }
 
-  addTodo(list) {
-    this.list.push(list);
-    localStorage.setItem('lists', JSON.stringify(this.list));
+  addTask(todo) {
+    this.list.push(todo);
+    localStorage.setItem('taskList', JSON.stringify(this.list));
   }
 
-  removeList(list1) {
-    this.list = this.list.filter((list) => list.id !== list1);
-    this.list.forEach((list, index) => {
-      list.index = index + 1;
+  removeTask(todoID) {
+    this.list = this.list.filter((todo) => todo.id !== todoID);
+    this.list.forEach((todo, index) => {
+      todo.index = index + 1;
     });
-    localStorage.setItem('lists', JSON.stringify(this.list));
+    localStorage.setItem('taskList', JSON.stringify(this.list));
   }
-
-  editlist(list1, listDescription) {
-    this.list = this.list.map((list) => {
-      if (list.id === list1) {
-        return { ...list, description: listDescription };
+  editTask(todoId, todoDescription) {
+    this.list = this.list.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, description: todoDescription };
       }
-      return list;
+      return todo;
     });
-    localStorage.setItem('lists', JSON.stringify(this.list));
+    localStorage.setItem('taskList', JSON.stringify(this.list));
   }
 
-  finishList(list1, status) {
-    const selected = this.list.findIndex((element) => element.id === list1);
+  completeTask(todoId, status) {
+    const selected = this.list.findIndex((element) => element.id === todoId);
     this.list[selected].completed = status;
-    localStorage.setItem('lists', JSON.stringify(this.list));
+    localStorage.setItem('taskList', JSON.stringify(this.list));
   }
 
-  clearList() {
-    this.list = this.list.filter((list) => !list.completed);
-    this.list.forEach((list, index) => {
-      list.index = index + 1;
+  clearCompletedTask() {
+    this.list = this.list.filter((todo) => !todo.completed);
+    this.list.forEach((todo, index) => {
+      todo.index = index + 1;
     });
-    localStorage.setItem('lists', JSON.stringify(this.list));
+    localStorage.setItem('taskList', JSON.stringify(this.list));
   }
 }
