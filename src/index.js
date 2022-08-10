@@ -1,30 +1,31 @@
-import List from './list';
 import './style.css';
+import render from './populateui.js';
+import AddToDoList from './list.js';
 
-const Lists = new List();
-// render(Lists);
+const taskList = new AddToDoList();
+render(taskList);
 
-const addListBtn = document.querySelector('.add-btn');
-addListBtn.addEventListener('click', () => {
+const addTodoBtn = document.querySelector('.add-btn');
+addTodoBtn.addEventListener('click', () => {
   const id = `id${Math.random().toString(16).slice(2)}`;
   const description = document.querySelector('.input-list').value.trim();
   const completed = false;
-  const index = Lists.list.length + 1;
+  const index = taskList.list.length + 1;
 
-  const newList = {
+  const newTask = {
     id,
     description,
     completed,
     index,
   };
   if (description) {
-    Lists.addTodo(newList);
-    render(Lists);
+    taskList.addTask(newTask);
+    render(taskList);
   }
 });
 
 const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click', () => {
-  Lists.clearCompletedTodos();
-  render(Lists);
+  taskList.clearCompletedTask();
+  render(taskList);
 });
