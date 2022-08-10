@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do list</title>
-
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -18,11 +18,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script defer src="main.js"></script>
   <script defer src="main.js"></script></head>
   <body>
     <div class="container">
       <h4 class="title">Today's To Do</h4>
-      <button type="button" class="refrech-btn">
+      <button class="refrech-btn">
         <i class="fa-solid fa-arrows-rotate"></i>
       </button>
 
@@ -33,7 +34,7 @@
           placeholder="Add  to  your  List..."
           autofocus
         />
-        <button type="button" class="add-btn">
+        <button class="add-btn">
           <i class="fa-solid fa-arrow-turn-down"></i>
         </button>
       </form>
