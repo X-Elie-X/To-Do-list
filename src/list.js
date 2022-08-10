@@ -17,6 +17,7 @@ export default class AddToDoList {
     });
     localStorage.setItem('taskList', JSON.stringify(this.list));
   }
+
   editTask(todoId, todoDescription) {
     this.list = this.list.map((todo) => {
       if (todo.id === todoId) {

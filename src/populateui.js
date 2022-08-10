@@ -14,6 +14,7 @@ const render = (taskList) => {
                       </div>
       `;
   });
+
   taskContainer.innerHTML = taskHtml;
   const removeBtn = document.querySelectorAll('.remove-btn');
   removeBtn.forEach((btn) => {
@@ -38,6 +39,7 @@ const render = (taskList) => {
       taskList.editTask(e.target.id, e.target.value);
     });
   });
+
   const taskCheck = document.querySelectorAll('.todo-check');
   taskCheck.forEach((todo) => {
     todo.addEventListener('change', (e) => {
