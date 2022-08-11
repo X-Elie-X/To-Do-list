@@ -24,6 +24,30 @@ const render = (taskList) => {
       taskList.removeTask(e.target.parentNode.id);
     });
   });
+
+  const taskContent = document.querySelectorAll('.todo-edit');
+  taskContent.forEach((todo) => {
+    todo.addEventListener('focusin', (e) => {
+      e.target.parentNode.parentNode.style.background = 'rgb(241,240,204)';
+      e.target.style.background = 'rgb(241,240,204)';
+    });
+    todo.addEventListener('focusout', (e) => {
+      e.target.style.background = 'white';
+      e.target.parentNode.parentNode.style.background = 'white';
+    });
+    todo.addEventListener('input', (e) => {
+      taskList.editTask(e.target.id, e.target.value);
+    });
+  });
+
+  const taskCheck = document.querySelectorAll('.todo-check');
+  taskCheck.forEach((todo) => {
+    todo.addEventListener('change', (e) => {
+      const { id } = e.target;
+      taskList.completeTask(id, e.target.checked);
+      e.target.parentNode.lastElementChild.classList.toggle('checked');
+    });
+  });
 };
 
 export default render;
