@@ -1,7 +1,23 @@
 import './style.css';
-import render from './populateui.js';
-import AddToDoList from './list.js';
-
+// import render from './populateui.js';
+// import AddToDoList from './list.js';
+const render = (taskList) => {
+  const sortedTask = taskList.list.sort((a, b) => a.index - b.index);
+  const taskContainer = document.querySelector('.lists');
+  let taskHtml = '';
+  sortedTask.forEach(({ completed, description, id }) => {
+    const checkedTodo = completed ? 'checked' : '';
+    const checkClass = completed ? 'checked' : '';
+    taskHtml += `  <div class="todo-item">
+                          <div>
+                              <input id="${id}" class="todo-check" type="checkbox" ${checkedTodo} />
+                              <input id="${id}" class="todo-edit ${checkClass}" type="text" value="${description}" />
+                          </div>
+                          <button id="${id}" class="remove-btn"><i id="remove" class="fa-solid fa-trash-can fa-lg"></i></button>
+                      </div>
+      `;
+  });
+};
 const taskList = new AddToDoList();
 render(taskList);
 
