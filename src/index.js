@@ -17,31 +17,40 @@ const render = (taskList) => {
                       </div>
       `;
   });
+  taskContainer.innerHTML = taskHtml;
+  const removeBtn = document.querySelectorAll('.remove-btn');
+  removeBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const element = btn.parentNode;
+      element.remove();
+      taskList.removeTask(e.target.parentNode.id);
+    });
+  });
 };
-const taskList = new AddToDoList();
-render(taskList);
+// const taskList = new AddToDoList();
+// render(taskList);
 
-const addTodoBtn = document.querySelector('.add-btn');
-addTodoBtn.addEventListener('click', () => {
-  const id = `id${Math.random().toString(16).slice(2)}`;
-  const description = document.querySelector('.input-list').value.trim();
-  const completed = false;
-  const index = taskList.list.length + 1;
+// const addTodoBtn = document.querySelector('.add-btn');
+// addTodoBtn.addEventListener('click', () => {
+//   const id = `id${Math.random().toString(16).slice(2)}`;
+//   const description = document.querySelector('.input-list').value.trim();
+//   const completed = false;
+//   const index = taskList.list.length + 1;
 
-  const newTask = {
-    id,
-    description,
-    completed,
-    index,
-  };
-  if (description) {
-    taskList.addTask(newTask);
-    render(taskList);
-  }
-});
+//   const newTask = {
+//     id,
+//     description,
+//     completed,
+//     index,
+//   };
+//   if (description) {
+//     taskList.addTask(newTask);
+//     render(taskList);
+//   }
+// });
 
-const clearBtn = document.querySelector('.clear-btn');
-clearBtn.addEventListener('click', () => {
-  taskList.clearCompletedTask();
-  render(taskList);
-});
+// const clearBtn = document.querySelector('.clear-btn');
+// clearBtn.addEventListener('click', () => {
+//   taskList.clearCompletedTask();
+//   render(taskList);
+// });
