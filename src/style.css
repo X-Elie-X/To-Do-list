@@ -110,3 +110,7 @@ input[type='text']:focus {
   font-size: 15px;
   font-family: 'Tiro Gurmukhi', serif;
 }
+.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
