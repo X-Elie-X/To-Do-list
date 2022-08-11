@@ -27,6 +27,7 @@ const render = (taskList) => {
     });
   });
 };
+export default render;
 // const taskList = new AddToDoList();
 // render(taskList);
 
