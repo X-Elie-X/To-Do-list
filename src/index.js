@@ -1,57 +1,20 @@
 import './style.css';
-// import render from './populateui.js';
-// import AddToDoList from './list.js';
-const render = (taskList) => {
-  const sortedTask = taskList.list.sort((a, b) => a.index - b.index);
-  const taskContainer = document.querySelector('.lists');
-  let taskHtml = '';
-  sortedTask.forEach(({ completed, description, id }) => {
-    const checkedTodo = completed ? 'checked' : '';
-    const checkClass = completed ? 'checked' : '';
-    taskHtml += `  <div class="todo-item">
-                          <div>
-                              <input id="${id}" class="todo-check" type="checkbox" ${checkedTodo} />
-                              <input id="${id}" class="todo-edit ${checkClass}" type="text" value="${description}" />
-                          </div>
-                          <button id="${id}" class="remove-btn"><i id="remove" class="fa-solid fa-trash-can fa-lg"></i></button>
-                      </div>
-      `;
+
+const todosList = [
+  { description: 'hello', completed: false, index: 1 },
+  { description: 'done', completed: false, index: 2 },
+];
+
+const render = (list) => {
+  const sortedTodos = list.sort((a, b) => a.index - b.index);
+  const todosContainer = document.querySelector('.lists');
+  let todosHtml = '';
+  sortedTodos.forEach((todo) => {
+    todosHtml += ` <div class="todo-item">
+        <input type="checkbox" /><span> ${todo.description}</span>
+    </div>`;
   });
-  taskContainer.innerHTML = taskHtml;
-  const removeBtn = document.querySelectorAll('.remove-btn');
-  removeBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const element = btn.parentNode;
-      element.remove();
-      taskList.removeTask(e.target.parentNode.id);
-    });
-  });
+  todosContainer.innerHTML = todosHtml;
 };
-export default render;
-// const taskList = new AddToDoList();
-// render(taskList);
 
-// const addTodoBtn = document.querySelector('.add-btn');
-// addTodoBtn.addEventListener('click', () => {
-//   const id = `id${Math.random().toString(16).slice(2)}`;
-//   const description = document.querySelector('.input-list').value.trim();
-//   const completed = false;
-//   const index = taskList.list.length + 1;
-
-//   const newTask = {
-//     id,
-//     description,
-//     completed,
-//     index,
-//   };
-//   if (description) {
-//     taskList.addTask(newTask);
-//     render(taskList);
-//   }
-// });
-
-// const clearBtn = document.querySelector('.clear-btn');
-// clearBtn.addEventListener('click', () => {
-//   taskList.clearCompletedTask();
-//   render(taskList);
-// });
+render(todosList);
