@@ -24,8 +24,3 @@ addTodoBtn.addEventListener('click', () => {
     render(taskList);
   }
 });
-const clearBtn = document.querySelector('.clear-btn');
-clearBtn.addEventListener('click', () => {
-  taskList.clearCompletedTask();
-  render(taskList);
-});
