@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "deploy": "npm run build && gh-pages -d dist"
+
   },
   "keywords": [],
   "author": "",
@@ -27,7 +29,9 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3"
   },
+  "homepage":"https://x-elie-x.github.io/To-Do-list/",
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "lodash": "^4.17.21"
   }
 }
