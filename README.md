@@ -25,7 +25,9 @@ In this project, it includes building a simple HTML list of To Do tasks using we
 5. fix linters errors.
 6. test the website by adding and removing tasks.
 
+## Live Demo (if available)
 
+[Live Demo Link](https://x-elie-x.github.io/To-Do-list/)
 
 
 # Run Tests
